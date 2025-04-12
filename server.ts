@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 const dotenv = require('dotenv');
-const ConnectDB = require('../Config/db');
+const ConnectDB = require('./Config/db');
 const cors = require("cors");
-const Authrouter = require('./Router/authRouter')
-const Vegrouter = require("./Router/vegRouter")
-const NonvegRouter = require("./Router/nonvegRouter");
-const QrcodeRouter = require("./Router/qrCodeRouter")
+const Authrouter = require('./src/Router/authRouter')
+const Vegrouter = require("./src/Router/vegRouter")
+const NonvegRouter = require("./src/Router/nonvegRouter");
+const QrcodeRouter = require("./src/Router/qrCodeRouter")
 import path = require("path");
 dotenv.config();
 ConnectDB();
