@@ -41,7 +41,7 @@ const GenerateQR = async (req: any, res: any) => {
 
         // const qrFilePath = path.join(__dirname, "public", `${email}.png`);
         const qrFilePath = path.join(publicDir, `${email}.png`);
-        const qrFileUrl = `http://localhost:5000/${email}.png`;
+        const qrFileUrl = `https://qrbackend-5.onrender.com/${email}.png`;
 
         if (fs.existsSync(qrFilePath)) {
             console.log("QR already exists, sending existing file.");
@@ -51,7 +51,7 @@ const GenerateQR = async (req: any, res: any) => {
 
         await QRCode.toFile(qrFilePath, qrData);
 
-        res.json({ qrCodeUrl: `http://localhost:5000/${email}.png`, email: email, success: true });
+        res.json({ qrCodeUrl: `https://qrbackend-5.onrender.com/${email}.png`, email: email, success: true });
 
     } catch (error: any) {
         console.error("QR Code generation error:", error.message, error.stack);

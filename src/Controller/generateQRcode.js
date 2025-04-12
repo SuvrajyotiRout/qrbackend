@@ -43,13 +43,13 @@ const GenerateQR = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         // const qrData: string = `http://localhost:5000/generate-qr/get-url`;
         // const qrFilePath = path.join(__dirname, "public", `${email}.png`);
         const qrFilePath = path_1.default.join(publicDir, `${email}.png`);
-        const qrFileUrl = `http://localhost:5000/${email}.png`;
+        const qrFileUrl = `https://qrbackend-5.onrender.com/${email}.png`;
         if (fs_1.default.existsSync(qrFilePath)) {
             console.log("QR already exists, sending existing file.");
             return res.json({ qrCodeUrl: qrFileUrl, email: email, success: true });
         }
         yield qrcode_1.default.toFile(qrFilePath, qrData);
-        res.json({ qrCodeUrl: `http://localhost:5000/${email}.png`, email: email, success: true });
+        res.json({ qrCodeUrl: `https://qrbackend-5.onrender.com/${email}.png`, email: email, success: true });
     }
     catch (error) {
         console.error("QR Code generation error:", error.message, error.stack);
