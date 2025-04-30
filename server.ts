@@ -6,7 +6,8 @@ const cors = require("cors");
 const Authrouter = require('./src/Router/authRouter')
 const Vegrouter = require("./src/Router/vegRouter")
 const NonvegRouter = require("./src/Router/nonvegRouter");
-const QrcodeRouter = require("./src/Router/qrCodeRouter")
+const QrcodeRouter = require("./src/Router/qrCodeRouter");
+const DrinksRouter = require("./src/Router/DrinksRouter")
 import path = require("path");
 dotenv.config();
 ConnectDB();
@@ -26,6 +27,7 @@ app.use('/Auth', Authrouter);
 app.use('/menu/Veg', Vegrouter,);
 app.use('/menu/Non-Veg', NonvegRouter);
 app.use("/generate-qr", QrcodeRouter);
+app.use("/Drinks", DrinksRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`app listening on port ${process.env.PORT}`)
