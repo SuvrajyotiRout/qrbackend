@@ -18,6 +18,7 @@ const fs_1 = __importDefault(require("fs"));
 const NonVeg = require('../Model/NonVegModel');
 const Veg = require('../Model/vegModel');
 const Registreruser = require("../Model/authModel");
+const DrinksModel = require("../Model/DrinksModel");
 // Ensure the "public" directory exists
 const publicDir = path_1.default.join(__dirname, "../../", "public");
 if (!fs_1.default.existsSync(publicDir)) {
@@ -60,6 +61,8 @@ const GetMenuByEmail = (req, res) => __awaiter(void 0, void 0, void 0, function*
     try {
         const nonVegMenu = yield NonVeg.find();
         const vegMenu = yield Veg.find();
+        const Drinkingitem = yield DrinksModel.find();
+        console.log(vegMenu, nonVegMenu, Drinkingitem);
         if (!nonVegMenu.length && !vegMenu.length) {
             return res.status(404).json({ message: "No menu found for this email", success: false });
         }
@@ -67,7 +70,7 @@ const GetMenuByEmail = (req, res) => __awaiter(void 0, void 0, void 0, function*
             message: "Menu retrieved successfully",
             success: true,
             // email, // Send email back for further use
-            menu: { vegMenu, nonVegMenu }
+            menu: { vegMenu, nonVegMenu, drinksMenu: Drinkingitem }
         });
     }
     catch (error) {

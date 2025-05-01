@@ -4,6 +4,7 @@ import fs from "fs";
 const NonVeg = require('../Model/NonVegModel')
 const Veg = require('../Model/vegModel');
 const Registreruser = require("../Model/authModel")
+const DrinksModel = require("../Model/DrinksModel")
 
 
 // Ensure the "public" directory exists
@@ -65,6 +66,8 @@ const GetMenuByEmail = async (req: any, res: any) => {
 
         const nonVegMenu = await NonVeg.find();
         const vegMenu = await Veg.find();
+        const Drinkingitem = await DrinksModel.find();
+        console.log(vegMenu, nonVegMenu, Drinkingitem);
 
         if (!nonVegMenu.length && !vegMenu.length) {
             return res.status(404).json({ message: "No menu found for this email", success: false });
@@ -74,7 +77,7 @@ const GetMenuByEmail = async (req: any, res: any) => {
             message: "Menu retrieved successfully",
             success: true,
             // email, // Send email back for further use
-            menu: { vegMenu, nonVegMenu }
+            menu: { vegMenu, nonVegMenu, drinksMenu: Drinkingitem }
         });
     } catch (error) {
         console.error("Error fetching menu:", error);
