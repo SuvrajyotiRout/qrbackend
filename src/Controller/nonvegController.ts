@@ -1,4 +1,8 @@
-const NonVeg = require('../Model/NonVegModel')
+const NonVeg = require('../Model/NonVegModel');
+
+
+
+
 
 const GetNonVeg = async (req: any, res: any) => {
     try {

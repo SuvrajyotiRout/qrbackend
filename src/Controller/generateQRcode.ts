@@ -35,7 +35,7 @@ const GenerateQR = async (req: any, res: any) => {
 
         // const qrData: string = `http://localhost:5000/get-menu/${encodeURIComponent(email)}`;
         // const qrData: string = `http://localhost:5000/generate-qr/get-menu`;
-        const qrData: string = `https://suvrajyotirout.netlify.app/`;
+        const qrData: string = `https://l59b0rw5-54917.inc1.devtunnels.ms/`;
 
 
         // const qrData: string = `http://localhost:5000/generate-qr/get-url`;

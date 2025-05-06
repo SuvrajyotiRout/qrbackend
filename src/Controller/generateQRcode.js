@@ -40,7 +40,7 @@ const GenerateQR = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         // don't show the link url when the qr is scanned the then direct redirect to the "qrData" page 
         // const qrData: string = `http://localhost:5000/get-menu/${encodeURIComponent(email)}`;
         // const qrData: string = `http://localhost:5000/generate-qr/get-menu`;
-        const qrData = `https://suvrajyotirout.netlify.app/`;
+        const qrData = `https://l59b0rw5-54917.inc1.devtunnels.ms/`;
         // const qrData: string = `http://localhost:5000/generate-qr/get-url`;
         // const qrFilePath = path.join(__dirname, "public", `${email}.png`);
         const qrFilePath = path_1.default.join(publicDir, `${email}.png`);

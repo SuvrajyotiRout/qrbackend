@@ -11,4 +11,5 @@ Vegrouter.post("/", upload.single("vegdishImage"), Authentication, VegController
 Vegrouter.put("/:id", upload.single("vegdishImage"), Authentication, VegController.UpdateVeg);
 Vegrouter.delete("/:id", Authentication, VegController.DeleteVeg);
 
+
 module.exports = Vegrouter;
